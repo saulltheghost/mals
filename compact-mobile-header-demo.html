@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MALS - Compact Mobile Header Demo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --card: #0f1720;
+        --muted: #9aa5b1;
+        --accent: #e63946;
+        --white: #ffffff;
+        font-family: "Montserrat", sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: linear-gradient(180deg, var(--bg), #061018 120%);
+        color: var(--white);
+        line-height: 1.5;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px;
+      }
+
+      /* Ultra Compact Mobile Header */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        padding: 6px 0;
+        position: sticky;
+        top: 0;
+        background: rgba(11, 15, 20, 0.95);
+        backdrop-filter: blur(8px);
+        z-index: 999;
+        min-height: 42px;
+      }
+      .logo {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        min-width: 40px;
+      }
+      .brand {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        color: var(--white);
+        margin-right: 2px;
+      }
+      nav {
+        gap: 2px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+      }
+      nav a {
+        font-size: 9.5px;
+        padding: 3px 4px;
+        white-space: nowrap;
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+      nav a:hover {
+        color: var(--white);
+      }
+      .cta {
+        padding: 3px 5px;
+        font-size: 8.5px;
+        border-radius: 5px;
+        margin-left: 2px;
+        background: var(--accent);
+        color: var(--white);
+        font-weight: 700;
+        transition: background 0.3s;
+      }
+      .cta:hover {
+        background: #d8333f;
+      }
+
+      .demo-content {
+        padding: 20px;
+        text-align: center;
+      }
+      .demo-content h2 {
+        margin-bottom: 16px;
+        color: var(--accent);
+      }
+      .demo-content p {
+        max-width: 600px;
+        margin: 0 auto 15px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* Different Mobile Sizes */
+      @media (max-width: 375px) {
+        .container {
+          padding: 8px 4px;
+        }
+        header {
+          gap: 4px;
+          min-height: 40px;
+        }
+        .logo {
+          min-width: 35px;
+        }
+        .brand {
+          font-size: 13px;
+        }
+        nav {
+          gap: 1px;
+        }
+        nav a {
+          font-size: 9px;
+          padding: 2px 3px;
+        }
+        .cta {
+          padding: 2px 4px;
+          font-size: 8px;
+          border-radius: 4px;
+        }
+      }
+
+      @media (min-width: 376px) and (max-width: 414px) {
+        .container {
+          padding: 10px 5px;
+        }
+        .brand {
+          font-size: 13.5px;
+        }
+        nav {
+          gap: 1.5px;
+        }
+        nav a {
+          font-size: 9.2px;
+          padding: 2.5px 3.5px;
+        }
+        .cta {
+          padding: 2.5px 4.5px;
+          font-size: 8.2px;
+        }
+      }
+
+      @media (min-width: 415px) and (max-width: 768px) {
+        .container {
+          padding: 12px 8px;
+        }
+        header {
+          gap: 8px;
+          min-height: 44px;
+        }
+        .logo {
+          min-width: 45px;
+        }
+        .brand {
+          font-size: 15px;
+          margin-right: 4px;
+        }
+        nav {
+          gap: 3px;
+        }
+        nav a {
+          font-size: 10px;
+          padding: 4px 5px;
+        }
+        .cta {
+          padding: 4px 6px;
+          font-size: 9px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <div class="brand">MALS</div>
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="projects.html">Projects</a>
+          <a href="team.html">Team</a>
+          <a href="contact.html" class="cta">Contact</a>
+        </nav>
+      </header>
+
+      <div class="demo-content">
+        <h2>تصميم رأس صفحة متجاوب للهاتف</h2>
+        <p>
+          جميع عناصر التنمر (About/Solutions/Projects/Team/Contact) ظاهرة في سطر
+          واحد مع الشعار
+        </p>
+        <p>
+          التصميم يتكيف مع مختلف أحجام شاشات الهواتف (iPhone, Samsung, etc.)
+        </p>
+        <p>تم تحسين حجم الخطوط والتباعد لضمان رؤية جميع العناصر بوضوح</p>
+      </div>
+    </div>
+  </body>
+</html>

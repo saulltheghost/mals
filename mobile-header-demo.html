@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MALS - Mobile Header Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1720;
+      --muted:#9aa5b1;
+      --accent:#e63946;
+      --white:#ffffff;
+      --glass: rgba(255,255,255,0.04);
+      font-family: 'Montserrat', sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:linear-gradient(180deg,var(--bg),#061018 120%);color:var(--white);line-height:1.5}
+    .container{max-width:1200px;margin:0 auto;padding:12px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;position:sticky;top:0;background:rgba(11,15,20,0.95);backdrop-filter:blur(8px);z-index:999}
+    .logo{flex-shrink:0}
+    .brand{font-size:16px;font-weight:700;letter-spacing:0.4px;color:var(--white)}
+    .logo-subtitle{font-size:10px;color:var(--muted);display:block}
+    nav{gap:6px;display:flex;flex-direction:row;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch;flex:1;justify-content:flex-end}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:11px;padding:4px 6px;white-space:nowrap;transition:color 0.3s}
+    nav a:hover{color:var(--white)}
+    .cta{background:var(--accent);padding:5px 8px;border-radius:8px;color:var(--white);font-weight:700;font-size:10px;margin-left:4px;transition:background 0.3s}
+    .cta:hover{background:#d8333f}
+
+    .demo-content{padding:20px;text-align:center}
+    .demo-content h2{margin-bottom:16px;color:var(--accent)}
+    .demo-content p{max-width:600px;margin:0 auto 20px;color:var(--muted)}
+
+    /* Mobile Portrait */
+    @media (max-width: 375px) {
+      .container{padding:8px}
+      header{gap:6px}
+      .brand{font-size:14px}
+      .logo-subtitle{font-size:9px}
+      nav{gap:4px}
+      nav a{font-size:10px;padding:3px 4px}
+      .cta{padding:4px 6px;font-size:9px}
+    }
+
+    /* Mobile Landscape */
+    @media (min-width: 376px) and (max-width: 768px) {
+      .container{padding:12px}
+      nav{gap:8px}
+      nav a{font-size:12px;padding:5px 8px}
+      .cta{padding:6px 10px;font-size:11px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div>
+          <div class="brand">MALS</div>
+          <div class="logo-subtitle">Modern Advanced Living Solutions</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="projects.html">Projects</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+    </header>
+
+    <div class="demo-content">
+      <h2>Mobile Header Demo</h2>
+      <p>هذا هو تصميم رأس الصفحة للهاتف المحمول مع الشعار وروابط التنقل في سطر واحد. التصميم متجاوب ويعمل بشكل مثالي على الشاشات الصغيرة.</p>
+      <p>جميع الصفحات تم تحديثها بنفس التصميم: index.html, solutions.html, projects.html, team.html, و contact.html</p>
+    </div>
+  </div>
+</body>
+</html>

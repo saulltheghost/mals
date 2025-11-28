@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MALS - Clean Header Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1720;
+      --muted:#9aa5b1;
+      --accent:#e63946;
+      --white:#ffffff;
+      font-family: 'Montserrat', sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:linear-gradient(180deg,var(--bg),#061018 120%);color:var(--white);line-height:1.5}
+    .container{max-width:1200px;margin:0 auto;padding:12px}
+
+    /* Clean Header Design - No Subtitle */
+    header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;position:sticky;top:0;background:rgba(11,15,20,0.95);backdrop-filter:blur(8px);z-index:999;min-height:48px}
+    .logo{flex-shrink:0;display:flex;align-items:center}
+    .brand{font-size:18px;font-weight:700;letter-spacing:0.6px;color:var(--white)}
+    nav{gap:8px;display:flex;flex-direction:row;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch;flex:1;justify-content:flex-end}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:12px;padding:6px 8px;white-space:nowrap;transition:color 0.3s}
+    nav a:hover{color:var(--white)}
+    .cta{background:var(--accent);padding:6px 10px;border-radius:8px;color:var(--white);font-weight:700;font-size:11px;margin-left:6px;transition:background 0.3s}
+    .cta:hover{background:#d8333f}
+
+    .demo-content{padding:30px 20px;text-align:center}
+    .demo-content h2{margin-bottom:16px;color:var(--accent)}
+    .demo-content p{max-width:600px;margin:0 auto 20px;color:var(--muted);font-size:14px}
+
+    /* Mobile Optimizations */
+    @media (max-width:768px){
+      .container{padding:16px}
+      nav{gap:6px}
+      nav a{font-size:11px;padding:5px 6px}
+      .cta{padding:5px 8px;font-size:10px;margin-left:4px}
+    }
+
+    @media (max-width:375px){
+      .container{padding:12px}
+      .brand{font-size:16px}
+      nav{gap:4px}
+      nav a{font-size:10px;padding:3px 4px}
+      .cta{padding:4px 6px;font-size:9px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="brand">MALS</div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="projects.html">Projects</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+    </header>
+
+    <div class="demo-content">
+      <h2>تصميم رأس الصفحة النظيف</h2>
+      <p>تمت إزالة النص "Modern Advanced Living Solutions" من تحت الشعار كما طلبت. التصميم الآن أنظف وأكثر احترافية على الهاتف المحمول.</p>
+      <p>رأس الصفحة يعرض فقط شعار MALS مع روابط التنقل في سطر واحد متجاوب.</p>
+    </div>
+  </div>
+</body>
+</html>

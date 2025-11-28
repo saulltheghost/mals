@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Solutions</title>
+    <link rel="icon" href="imgs/mals-header.png" />
+    <meta
+      name="description"
+      content="MALS is a startup building smart urban solutions: smart lighting poles, smart street bins, and smart public benches." />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --card: #0f1720;
+        --muted: #9aa5b1;
+        --accent: #e63946;
+        --white: #ffffff;
+        --glass: rgba(255, 255, 255, 0.04);
+        --radius: 14px;
+        --maxw: 1200px;
+        font-family: "Montserrat", sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: linear-gradient(180deg, var(--bg), #061018 120%);
+        color: var(--white);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .container {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        background: rgba(11, 15, 20, 0.95);
+        backdrop-filter: blur(8px);
+        z-index: 999;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+      }
+      .brand {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        white-space: nowrap;
+      }
+      .brand img {
+        width: 100px;
+      }
+      .logo-subtitle {
+        color: var(--muted);
+        font-size: 11px;
+        white-space: nowrap;
+      }
+      nav {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        position: relative;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: 0.3s;
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
+      .cta {
+        background: var(--accent);
+        padding: 8px 12px;
+        border-radius: 10px;
+        color: var(--white);
+        font-weight: 700;
+        transition: 0.3s;
+        font-size: 13px;
+      }
+      .cta:hover {
+        background: #d8333f;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 32px;
+      }
+      .card {
+        background: var(--card);
+        padding: 24px;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(2, 6, 23, 0.7);
+      }
+      .card h3 {
+        margin: 0 0 12px;
+      }
+      .specs {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .section {
+        margin-top: 48px;
+        scroll-margin-top: 100px;
+      }
+      .section h2 {
+        margin-bottom: 16px;
+        font-size: 28px;
+      }
+
+      footer {
+        margin-top: 48px;
+        padding: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 992px) {
+        .hero-card {
+          padding: 24px;
+        }
+        .btn-row {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 12px 8px;
+        }
+        header {
+          padding: 6px 0;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          min-height: 44px;
+          gap: 8px;
+        }
+        .logo {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          min-width: 45px;
+        }
+        .brand {
+          font-size: 15px;
+          font-weight: 700;
+          letter-spacing: 0.3px;
+          margin-right: 4px;
+        }
+        nav {
+          gap: 3px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          flex: 1;
+          justify-content: flex-end;
+          flex-wrap: nowrap;
+        }
+        nav a {
+          font-size: 10px;
+          padding: 4px 5px;
+          white-space: nowrap;
+          color: var(--muted);
+          text-decoration: none;
+          font-weight: 600;
+          transition: color 0.3s;
+        }
+        nav a:hover {
+          color: var(--white);
+        }
+        .cta {
+          padding: 4px 6px;
+          font-size: 9px;
+          border-radius: 6px;
+          margin-left: 2px;
+          background: var(--accent);
+          color: var(--white);
+          font-weight: 700;
+          transition: background 0.3s;
+        }
+        .cta:hover {
+          background: #d8333f;
+        }
+        .hero {
+          padding: 24px 0;
+        }
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+        .hero p {
+          font-size: 0.95rem;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .card {
+          padding: 14px;
+        }
+      }
+      @media (max-width: 480px) {
+        .container {
+          padding: 10px 6px;
+        }
+        header {
+          gap: 6px;
+          min-height: 42px;
+        }
+        .brand {
+          font-size: 14px;
+          letter-spacing: 0.2px;
+          margin-right: 2px;
+        }
+        nav {
+          gap: 2px;
+        }
+        nav a {
+          font-size: 9.5px;
+          padding: 3px 4px;
+        }
+        .cta {
+          padding: 3px 5px;
+          font-size: 8.5px;
+          border-radius: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <div>
+            <div class="brand">
+              <img src="imgs/lamp-logo1.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <nav>
+          <a href="index.html#about">About</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="projects.html">Projects</a>
+          <a href="team.html">Team</a>
+          <a href="contact.html" class="cta">Contact</a>
+        </nav>
+      </header>
+
+      <section class="section" style="margin-top: 20px">
+        <h2>Our Innovations</h2>
+        <p class="muted">
+          MALS is driving the future of public infrastructure with intelligent,
+          sustainable, and connected solutions for modern cities.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Smart Lighting Pole</h3>
+            <img
+              src="imgs/IMG_2383.jpg"
+              alt="Smart Pole"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              Revolutionary solar-powered LED lighting system designed for
+              modern urban environments. This intelligent pole combines energy
+              efficiency with advanced smart city capabilities, featuring motion
+              sensors that automatically adjust brightness levels, optional
+              integrated camera modules for enhanced security, and convenient
+              USB/Type-C charging points for public use.
+            </p>
+            <ul class="muted">
+              <li>
+                Solar-powered with high-capacity battery backup for 24/7
+                operation
+              </li>
+              <li>
+                Adaptive brightness technology with motion detection sensors
+              </li>
+              <li>
+                Optional CCTV integration and environmental monitoring sensors
+              </li>
+              <li>
+                Durable materials engineered to withstand extreme weather
+                conditions
+              </li>
+              <li>
+                Remote management system for real-time monitoring and energy
+                optimization
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Smart Street Trash Bin</h3>
+            <img
+              src="imgs/poubel2.jpg"
+              alt="Smart Bin"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              Advanced waste management solution featuring touch-free operation
+              with sensor-based automatic opening, built-in fullness sensors
+              that monitor waste levels in real-time, and weatherproof
+              construction for year-round outdoor use. The optional compacting
+              mechanism increases capacity by up to 5x, while the intelligent
+              notification system sends alerts to cleaning operators when bins
+              require service.
+            </p>
+            <ul class="muted">
+              <li>
+                Fill-level sensors with wireless connectivity for real-time
+                monitoring
+              </li>
+              <li>Automated opening system with infrared motion sensors</li>
+              <li>Designed for easy maintenance with tool-free access</li>
+              <li>Weather-resistant construction with UV protection</li>
+              <li>Optional waste compression system for increased capacity</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Smart Public Bench</h3>
+            <img
+              src="imgs/smart-b.png"
+              alt="Smart Bench"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              Premium public seating solution engineered for modern urban
+              environments, combining exceptional comfort with advanced
+              technology integration. This sophisticated bench features
+              integrated solar panels that power multiple charging options
+              including wireless charging pads and traditional power outlets,
+              while the built-in LED lighting system provides ambient
+              illumination for enhanced safety and aesthetics during evening
+              hours.
+            </p>
+            <ul class="muted">
+              <li>Wireless charging pads and multiple power outlet options</li>
+              <li>
+                Ergonomic design with premium materials for maximum comfort
+              </li>
+              <li>Modular construction allowing for easy customization</li>
+              <li>Anti-vandalism materials and tamper-resistant design</li>
+              <li>
+                Integrated LED lighting with automatic dusk-to-dawn operation
+              </li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Modern Sink</h3>
+            <img
+              src="imgs/sink.jpg"
+              alt="Smart Pole"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              A state-of-the-art modern sink designed for contemporary homes,
+              offices, and public facilities. This advanced washbasin combines
+              elegant minimalist design with smart functionality, offering
+              enhanced hygiene, water efficiency, and long-lasting durability.
+              Engineered with premium materials and precision craftsmanship, it
+              delivers both style and performance for any modern environment.
+            </p>
+            <ul class="muted">
+              <li>
+                Solar-powered with high-capacity battery backup for 24/7
+                operation
+              </li>
+              <li>
+                Adaptive brightness technology with motion detection sensors
+              </li>
+              <li>
+                Optional CCTV integration and environmental monitoring sensors
+              </li>
+              <li>
+                Durable materials engineered to withstand extreme weather
+                conditions
+              </li>
+              <li>
+                Remote management system for real-time monitoring and energy
+                optimization
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Big Pots</h3>
+            <img
+              src="imgs/pots1.jpg"
+              alt="Smart Bin"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              A robust and stylish large-scale plant pot solution engineered for
+              modern urban spaces, parks, commercial centers, and public
+              infrastructure projects. These big public pots combine
+              contemporary aesthetics with exceptional durability, providing an
+              ideal environment for trees, shrubs, and large decorative plants
+              while enhancing the visual identity of any outdoor area.
+            </p>
+            <ul class="muted">
+              <li>
+                Large-capacity design suitable for trees and heavy root systems
+              </li>
+              <li>
+                High-strength resin, concrete, or fiberglass materials for
+                long-lasting performance
+              </li>
+              <li>
+                UV-resistant and weatherproof surface to withstand extreme
+                outdoor conditions
+              </li>
+              <li>
+                Modern shapes and customizable colors to match any architectural
+                theme
+              </li>
+              <li>
+                Integrated drainage system for optimal plant health and easy
+                maintenance
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Modern Pay-to-Use Toilets</h3>
+            <img
+              src="imgs/toilet.png"
+              alt="Smart Bench"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              A cutting-edge sanitation solution engineered for today’s smart
+              cities and high-traffic public areas. This modern pay-to-use
+              toilet unit blends advanced hygiene technology with user-friendly
+              automation, ensuring a cleaner, safer, and more efficient
+              experience for all visitors. Built with durable materials and
+              equipped with intelligent features, it provides a reliable and
+              low-maintenance solution for municipalities and commercial spaces.
+            </p>
+            <ul class="muted">
+              <li>
+                Fully automated access control system with secure payment
+                options
+              </li>
+              <li>
+                Touchless flushing, handwashing, and drying for maximum hygiene
+              </li>
+              <li>
+                Self-cleaning interior mechanism for improved sanitation between
+                uses
+              </li>
+              <li>
+                Anti-vandalism construction using reinforced steel and
+                impact-resistant surfaces
+              </li>
+              <li>
+                Smart ventilation and odor control system for a fresh and
+                comfortable environment
+              </li>
+              <li>
+                Energy-efficient LED lighting with automatic on/off sensors
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Future Ambitions</h2>
+        <p class="muted">
+          At MALS, we are constantly evolving our vision for smarter cities. Our
+          roadmap includes expanding our smart waste management ecosystem,
+          developing real-time environmental monitoring networks, and creating
+          seamless integration with existing city IoT infrastructure.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Smart Waste Management Network</h3>
+            <p>
+              Expanding beyond individual smart bins to create an interconnected
+              waste management ecosystem. This includes dynamic routing for
+              collection vehicles, predictive analytics for optimal scheduling,
+              and integration with municipal waste management systems for
+              maximum efficiency.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Real-Time Environmental Monitoring</h3>
+            <p>
+              Deploying comprehensive sensor networks throughout urban areas to
+              monitor air quality, noise levels, temperature, and humidity. This
+              data will enable cities to respond quickly to environmental issues
+              and make data-driven decisions for citizen health and comfort.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>City-Wide IoT Integration</h3>
+            <p>
+              Developing open-standard protocols that allow our smart
+              infrastructure to seamlessly integrate with existing city systems,
+              traffic management, emergency services, and citizen applications
+              to create a unified smart city platform that enhances urban
+              living.
+            </p>
+          </article>
+        </div>
+      </section>
+      <footer>
+        <div>
+          © <span id="year"></span> MALS — Modern Advanced Living Solutions
+        </div>
+        <div class="muted">
+          <a
+            href="mailto:eurlemal@gmail.com"
+            class="youtube"
+            style="text-decoration: none; margin: 0">
+            <span style="font-size: 14px; color: #9aa5b1"
+              >eurlemal@gmail.com</span
+            >
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

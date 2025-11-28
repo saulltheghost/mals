@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Projects</title>
+    <link rel="icon" href="imgs/mals-header.png" />
+    <meta
+      name="description"
+      content="Explore MALS smart infrastructure projects and pilot implementations across urban environments worldwide." />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --card: #0f1720;
+        --muted: #9aa5b1;
+        --accent: #e63946;
+        --white: #ffffff;
+        --glass: rgba(255, 255, 255, 0.04);
+        --radius: 14px;
+        --maxw: 1200px;
+        font-family: "Montserrat", sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: linear-gradient(180deg, var(--bg), #061018 120%);
+        color: var(--white);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .container {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 16px 0;
+        position: sticky;
+        top: 0;
+        background: rgba(11, 15, 20, 0.9);
+        backdrop-filter: blur(8px);
+        z-index: 999;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+      }
+      .brand img {
+        width: 100px;
+      }
+      nav {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        position: relative;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: 0.3s;
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
+      .cta {
+        background: var(--accent);
+        padding: 10px 16px;
+        border-radius: 12px;
+        color: var(--white);
+        font-weight: 700;
+        transition: 0.3s;
+      }
+      .cta:hover {
+        background: #d8333f;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 24px;
+        margin-top: 32px;
+      }
+      .card {
+        background: var(--card);
+        padding: 24px;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(2, 6, 23, 0.7);
+      }
+      .card h3 {
+        margin: 0 0 12px;
+      }
+      .specs {
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .status {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .status.pilot {
+        background: #22c55e20;
+        color: #22c55e;
+        border: 1px solid #22c55e40;
+      }
+      .status.planning {
+        background: #f59e0b20;
+        color: #f59e0b;
+        border: 1px solid #f59e0b40;
+      }
+      .status.completed {
+        background: #3b82f620;
+        color: #3b82f6;
+        border: 1px solid #3b82f640;
+      }
+
+      .section {
+        margin-top: 48px;
+        scroll-margin-top: 100px;
+      }
+      .section h2 {
+        margin-bottom: 16px;
+        font-size: 28px;
+      }
+
+      footer {
+        margin-top: 48px;
+        padding: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 992px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 12px 8px;
+        }
+        header {
+          padding: 6px 5px;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          min-height: 44px;
+          gap: 8px;
+        }
+        .logo {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          min-width: 45px;
+        }
+        .brand {
+          font-size: 15px;
+          font-weight: 700;
+          letter-spacing: 0.3px;
+          margin-right: 4px;
+        }
+        .brand img{
+          width:50px;
+        }
+        nav {
+          gap: 3px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          flex: 1;
+          justify-content: flex-end;
+          flex-wrap: nowrap;
+        }
+        nav a {
+          font-size: 10px;
+          padding: 4px 5px;
+          white-space: nowrap;
+          color: var(--muted);
+          text-decoration: none;
+          font-weight: 600;
+          transition: color 0.3s;
+        }
+        nav a:hover {
+          color: var(--white);
+        }
+        .cta {
+          padding: 4px 6px;
+          font-size: 9px;
+          border-radius: 6px;
+          margin-left: 2px;
+          background: var(--accent);
+          color: var(--white);
+          font-weight: 700;
+          transition: 0.3s;
+        }
+        .cta:hover {
+          background: #d8333f;
+        }
+        .hero {
+          padding: 24px 0;
+        }
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+        .hero p {
+          font-size: 0.95rem;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .card {
+          padding: 14px;
+        }
+      }
+      .cta {
+        padding: 5px 8px;
+        font-size: 10px;
+        border-radius: 8px;
+        margin-left: 4px;
+      }
+      .hero {
+        padding: 32px 0;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .card {
+        padding: 16px;
+      }
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <div>
+            <div class="brand"><img src="imgs/lamp-logo1.png" alt="" /></div>
+          </div>
+        </div>
+        <nav>
+          <a href="index.html#about">About</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="projects.html">Projects</a>
+          <a href="team.html">Team</a>
+          <a href="contact.html" class="cta">Contact</a>
+        </nav>
+      </header>
+
+      <section class="section" style="margin-top: 20px">
+        <h2>Our Projects</h2>
+        <p class="muted">
+          Discover how MALS is transforming urban environments through
+          innovative smart infrastructure implementations across the globe.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <span class="status pilot">Pilot Project</span>
+            <h3>Downtown Smart Lighting Network</h3>
+            <img
+              src="imgs/project4.png"
+              alt="Smart Lighting Network"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              Comprehensive smart lighting installation across 2.5km of downtown
+              area featuring 150 intelligent LED poles with motion sensors,
+              environmental monitoring, and remote management capabilities.
+            </p>
+            <ul class="muted">
+              <li>150 smart LED poles installed</li>
+              <li>60% energy savings achieved</li>
+              <li>Real-time environmental monitoring</li>
+              <li>Integrated with city management system</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="status completed">Completed</span>
+            <h3>Business District Smart Bins</h3>
+            <img
+              src="imgs/project-02.png"
+              alt="Smart Bins"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              Deployment of 75 smart waste management bins in the central
+              business district with fill-level sensors, automated opening, and
+              real-time monitoring for optimized waste collection routes.
+            </p>
+            <ul class="muted">
+              <li>75 smart bins deployed</li>
+              <li>40% reduction in collection frequency</li>
+              <li>95% user satisfaction rate</li>
+              <li>Integration with municipal services</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="status planning">In Planning</span>
+            <h3>Riverside Park Smart Benches</h3>
+            <img
+              src="imgs/project 3.png"
+              alt="Smart Benches"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              Installation of 30 smart public benches along the riverside park
+              featuring solar charging, LED lighting, and wireless connectivity
+              to enhance visitor experience and park management.
+            </p>
+            <ul class="muted">
+              <li>30 smart benches planned</li>
+              <li>Solar-powered with battery backup</li>
+              <li>Wireless charging capabilities</li>
+              <li>Smart lighting and security features</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="status pilot">Pilot Project</span>
+            <h3>University Campus Smart Infrastructure</h3>
+            <img
+              src="imgs/project-01.png"
+              alt="University Campus"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              Comprehensive smart infrastructure deployment across a 50-acre
+              university campus including smart lighting, waste management, and
+              public amenities for 15,000 students and staff.
+            </p>
+            <ul class="muted">
+              <li>100 smart lighting poles</li>
+              <li>50 smart waste bins</li>
+              <li>25 smart benches</li>
+              <li>Centralized monitoring platform</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="status planning">In Planning</span>
+            <h3>Hospital District Smart Lighting</h3>
+            <img
+              src="imgs/project5.png"
+              alt="Hospital District"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              Smart lighting infrastructure for the medical district with
+              enhanced safety features, emergency lighting modes, and
+              integration with hospital security systems.
+            </p>
+            <ul class="muted">
+              <li>80 smart poles with emergency features</li>
+              <li>Enhanced security lighting</li>
+              <li>Integration with emergency services</li>
+              <li>Patient and visitor safety focus</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="status completed">Completed</span>
+            <h3>Shopping Mall Smart Waste System</h3>
+            <img
+              src="imgs/project6.png"
+              alt="Shopping Mall"
+              style="width: 100%; border-radius: 12px; margin-bottom: 12px" />
+            <p class="specs">
+              Implementation of smart waste management system in a major
+              shopping complex with 45 smart bins, automated compacting, and
+              analytics for waste reduction strategies.
+            </p>
+            <ul class="muted">
+              <li>45 smart bins with compacting</li>
+              <li>50% reduction in waste collection costs</li>
+              <li>Real-time fill level monitoring</li>
+              <li>Waste analytics and reporting</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <div>
+          © <span id="year"></span> MALS — Modern Advanced Living Solutions
+        </div>
+        <div class="muted">
+          <a
+            href="mailto:eurlemal@gmail.com"
+            class="youtube"
+            style="text-decoration: none; margin: 0">
+            <span style="font-size: 14px; color: #9aa5b1"
+              >eurlemal@gmail.com</span
+            >
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

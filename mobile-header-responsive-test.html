@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MALS - Mobile Header Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1720;
+      --muted:#9aa5b1;
+      --accent:#e63946;
+      --white:#ffffff;
+      font-family: 'Montserrat', sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:linear-gradient(180deg,var(--bg),#061018 120%);color:var(--white);line-height:1.5}
+    .container{max-width:1200px;margin:0 auto;padding:12px}
+
+    /* Ultra Compact Mobile Header - All Items Visible */
+    header{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:5px 0;position:sticky;top:0;background:rgba(11,15,20,0.95);backdrop-filter:blur(8px);z-index:999;min-height:40px}
+    .logo{flex-shrink:0;display:flex;align-items:center;min-width:35px}
+    .brand{font-size:13px;font-weight:700;letter-spacing:0.2px;color:var(--white);margin-right:1px}
+    nav{gap:1px;display:flex;flex-direction:row;align-items:center;flex:1;justify-content:flex-end;flex-wrap:nowrap}
+    nav a{font-size:9px;padding:2px 3px;white-space:nowrap;color:var(--muted);text-decoration:none;font-weight:600;transition:color 0.3s}
+    nav a:hover{color:var(--white)}
+    .cta{padding:2px 4px;font-size:8px;border-radius:4px;margin-left:1px;background:var(--accent);color:var(--white);font-weight:700;transition:background 0.3s}
+    .cta:hover{background:#d8333f}
+
+    .demo-content{padding:20px 15px;text-align:center}
+    .demo-content h2{margin-bottom:12px;color:var(--accent);font-size:16px}
+    .demo-content p{max-width:600px;margin:0 auto 12px;color:var(--muted);font-size:12px;line-height:1.4}
+
+    /* Screen size indicators */
+    .screen-info{position:fixed;top:10px;right:10px;background:rgba(0,0,0,0.7);color:white;padding:4px 8px;border-radius:4px;font-size:10px;z-index:1000}
+
+    /* Different mobile breakpoints */
+    @media (max-width:320px){
+      .container{padding:6px 3px}
+      header{gap:3px;min-height:38px}
+      .logo{min-width:30px}
+      .brand{font-size:12px}
+      nav{gap:0.5px}
+      nav a{font-size:8.5px;padding:1px 2px}
+      .cta{padding:1px 3px;font-size:7.5px;border-radius:3px}
+      .screen-info::after{content:" - iPhone SE/5S"}
+    }
+
+    @media (min-width:321px) and (max-width:375px){
+      .container{padding:8px 4px}
+      header{gap:4px;min-height:39px}
+      .logo{min-width:32px}
+      .brand{font-size:12.5px}
+      nav{gap:0.8px}
+      nav a{font-size:8.8px;padding:1.5px 2.5px}
+      .cta{padding:1.5px 3.5px;font-size:7.8px;border-radius:3.5px}
+      .screen-info::after{content:" - iPhone 6/7/8/X"}
+    }
+
+    @media (min-width:376px) and (max-width:414px){
+      .container{padding:10px 5px}
+      header{gap:5px;min-height:41px}
+      .logo{min-width:34px}
+      .brand{font-size:13px}
+      nav{gap:1px}
+      nav a{font-size:9px;padding:2px 3px}
+      .cta{padding:2px 4px;font-size:8px;border-radius:4px}
+      .screen-info::after{content:" - iPhone 6/7/8 Plus"}
+    }
+
+    @media (min-width:415px) and (max-width:768px){
+      .container{padding:12px 8px}
+      header{gap:8px;min-height:44px}
+      .logo{min-width:40px}
+      .brand{font-size:14px;margin-right:3px}
+      nav{gap:2px}
+      nav a{font-size:9.5px;padding:3px 4px}
+      .cta{padding:3px 5px;font-size:8.5px}
+      .screen-info::after{content:" - Small Tablet"}
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-info">Mobile View</div>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="brand">MALS</div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="projects.html">Projects</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+    </header>
+
+    <div class="demo-content">
+      <h2>تصميم رأس صفحة متجاوب للموبايل</h2>
+      <p>جميع عناصر التنقل (About/Solutions/Projects/Team/Contact) ظاهرة في سطر واحد مع الشعار</p>
+      <p>التصميم متجاوب مع مختلف أحجام شاشات الهواتف ويعرض جميع العناصر بشكل واضح</p>
+      <p>تم تحسين حجم الخطوط والتباعد لضمان ظهور جميع الروابط بشكل كامل على الشاشات الصغيرة</p>
+    </div>
+  </div>
+</body>
+</html>
